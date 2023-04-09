@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "cookie-parse": "^0.4.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fast-two-sms": "^3.0.0",
+    "git": "^0.1.5",
+    "heroku": "^8.0.3",
+    "netlify-cli": "^13.2.2",
+    "netlify-lambda": "^2.0.16",
+    "path": "^0.12.7",
+    "serverless-http": "^3.2.0",
+    "twilio": "^4.10.0"
+  },
+  "engines": {
+    "node": "v19.4.0"
+  }
+}
