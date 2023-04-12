@@ -41,8 +41,12 @@ var port=process.env.PORT||5000
     //     from:'+18646643216'
     //    }).then(message=>console.log(message)).catch(error=>console.log(error))
     // res.send(phone)
-    fast2sms.sendMessage({authorization:process.env.API_KEY,
-        message : "Welcome to club7 Gym&spa. We appreciate your decision in joining our club. Please let us help you succeed with your goals. We understand the challenges individuals face when deciding to start working out. For the majority, simply the question of how to exercise is the most common, for others, finding the time to workout can become the biggest obstacle. At club7 Gym, we understand these questions and challenges and will dedicate all our resources to help you lose weight and reach your goals. Here at club7 Gym, you will have a great time working out with friends, while getting in the best shape of your life." ,numbers :[phone]}) 
+    fast2sms.sendMessage(
+        {
+        authorization:process.env.API_KEY,
+        message : "Welcome to club7 Gym&spa. We appreciate your decision in joining our club." ,
+        numbers :[phone]
+    }) 
     res.send(JSON.stringify('SUCCESSFULL'))
 
 })
@@ -63,8 +67,18 @@ app.post('/email', async (req,res)=>{
         text:"Welcome to club7 Gym&spa. We appreciate your decision in joining our club. Please let us help you succeed with your goals. We understand the challenges individuals face when deciding to start working out. For the majority, simply the question of how to exercise is the most common, for others, finding the time to workout can become the biggest obstacle. At club7 Gym, we understand these questions and challenges and will dedicate all our resources to help you lose weight and reach your goals. Here at club7 Gym, you will have a great time working out with friends, while getting in the best shape of your life."
     })
     if(info){
-        res.send('SUCCESSFULL')
+        res.json('SUCCESSFULL')
     }
+ })
+ app.post('/expiresms',async(req,res)=>{
+    const {phone}  =await req.body
+    fast2sms.sendMessage({
+        authorization:process.env.API_KEY,
+        message:"your gym membership is expired"  ,
+        numbers:[phone]  
+    })
+    res.json('SUCCESSFULL')
+
  })
 app.listen(port,()=>{
     console.log(`you are running on port number ${port}`)
