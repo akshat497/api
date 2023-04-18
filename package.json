@@ -26,14 +26,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akshat497/api.git"
+    "url": "git+https://github.com/akshat497/otpapi.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/akshat497/api/issues"
+    "url": "https://github.com/akshat497/otpapi/issues"
   },
-  "homepage": "https://github.com/akshat497/api#readme",
+  "homepage": "https://github.com/akshat497/otpapi#readme",
   "description": ""
 }
